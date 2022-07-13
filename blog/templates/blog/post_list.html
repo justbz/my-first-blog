@@ -9,16 +9,13 @@
         <h1><a href="/">Django Boys Blog</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-        <p>published: 11.07.2022, 16:54</p>
-        <h2><a href="">My first post</a></h2>
-        <p>Someone awesome text about galaxy and milky way. Some text about astronouts and ou starships.</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>published: {{ post.published_date }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    {% endfor %}
 
-    <div>
-        <p>published: 12.07.2022, 12:24</p>
-        <h2><a href="">My second post</a></h2>
-        <p>Ты должна следовать этим правилам закрытия тегов и вложенности элементов: если ты их нарушишь, браузер не сможет интерпретировать код и корректно отобразить страницу.</p>
-    </div>
 </body>
 </html>
